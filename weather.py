@@ -11,6 +11,20 @@ data = response.json()
 
 weather = data["current_weather"]
 
-print("Current Weather in Vancouver:")
-print(f"Temperature: {weather['temperature']}°C")
-print(f"Wind Speed: {weather['windspeed']} km/h")
+temp = weather["temperature"]
+wind = weather["windspeed"]
+
+print("🌤 Current Weather in Vancouver:")
+print(f"Temperature: {temp}°C")
+print(f"Wind Speed: {wind} km/h")
+
+print("\n🤖 Should you go outside?")
+
+if temp < 5:
+    print("❄️ Too cold. Stay inside and cry.")
+elif wind > 20:
+    print("🌪 Too windy. You might fly away.")
+elif temp > 20:
+    print("🌞 Perfect weather! Go touch some grass.")
+else:
+    print("🤔 Maybe... but bring a jacket.")
